@@ -1,0 +1,77 @@
+Backend Development with Node, Express , MongoDB:
+
+Introduction to NodeJS:
+
+Node.js is a server side javascript runtime environment which provides the 
+environment to run javascript apps on the server side. 
+
+Node.js was implemented by Ryan while working on a java project. 
+
+Web Site: https://nodejs.org/en
+
+With node, we cannot develop applications.
+
+Express.js framework is used to develop server side javascript applications and runs 
+them on nodejs. 
+
+History of NodeJS:
+
+When Ryan was working on data intensive application. Java was used for that application. 
+
+Ryan found few performance issues with Java w.r.t data intensive applications and decided 
+to provide some solution through a javascript runtime engine and then developed Node.js
+
+May 27, 2009 is when the initial release on Node.JS.
+
+Stable version: April 18, 2023 
+
+Since Node.js is an opensource application, hence there are lot of users started using 
+Node.js.
+
+It was written C, C++, JavaScript.
+
+Corporate users of Node.js software include GoDaddy,[10] Groupon,[11] IBM,[12] LinkedIn,[13][14] Microsoft,[15][16] Netflix,[17] PayPal,[18][19] SAP,[20] Walmart,[21] Yahoo!,[22] and Amazon Web Services.[23]
+
+Features of NodeJS:
+
+1. light weight and uses Google Chrome's V8 engine.
+
+2. Its open source, we can even customize node.js based on our requirement. 
+
+3. It can run any kind of server side js application (expressjs, next.js).
+
+4. High Performance 
+
+5. Large community 
+
+6. Node.js is Single Threaded, event driven and aysnc runtime environment. 
+
+Dahl criticized the limited possibilities of the most popular web server in 2009, Apache HTTP Server,
+ to handle a lot of concurrent connections (up to 10,000 and more) and the most common way of creating code (sequential programming), 
+when code either blocked the entire process or implied multiple execution stacks in the case of simultaneous connections.
+
+
+Architecture:
+https://www.digitalocean.com/community/tutorials/node-js-architecture-single-threaded-event-loop
+
+Environment Set up:
+
+download nodejs and install :
+
+https://nodejs.org/en
+
+
+Running First Application:
+
+command: npm init 
+
+run: node  <filename> 
+
+
+REPL:  Read Evaluate Print Loop
+
+command: node
+
+
+
+
