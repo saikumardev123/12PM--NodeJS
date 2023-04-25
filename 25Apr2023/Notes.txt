@@ -1,0 +1,100 @@
+NPM: Node Package Manager is used to manage the packages(js applications). 
+
+Any application that is created using javascript (or its frameworks) is considered as a package. 
+
+npmjs is the repository where all the packages (private / public) are published and made available to the 
+users.
+
+
+node package manager provides multiple commands to work with packages. 
+
+npm install        install all the dependencies in your project
+npm install <foo>  add the <foo> dependency to your project
+npm test           run this project's tests
+npm run <foo>      run the script named <foo>
+npm <command> -h   quick help on <command>
+npm -l             display usage info for all commands
+npm help <term>    search for help on <term>
+npm help npm       more involved overview
+
+All commands:
+
+    access, adduser, audit, bugs, cache, ci, completion,
+    config, dedupe, deprecate, diff, dist-tag, docs, doctor,
+    edit, exec, explain, explore, find-dupes, fund, get, help,
+    hook, init, install, install-ci-test, install-test, link,
+    ll, login, logout, ls, org, outdated, owner, pack, ping,
+    pkg, prefix, profile, prune, publish, query, rebuild, repo,
+    restart, root, run-script, search, set, shrinkwrap, star,
+    stars, start, stop, team, test, token, uninstall, unpublish,
+    unstar, update, version, view, whoami
+
+
+Callbacks:
+
+A callback is a function that is passed as an argument to another function and the callback function gets called 
+when the data is ready / available. 
+
+
+var arr = ["user1", "user2", "user3", "user4"];
+
+var callback = (value) => {
+    console.log(value);
+}
+arr.forEach(callback);
+
+Event-driven programming:
+
+Event driven programming is the process of writing the implementations and 
+invoking them based on the events. 
+
+event: any action is an event, whenever an event occurs, the event needs to be handled. 
+
+We can create our own events, custom events.
+
+events package (module) is used to work with nodejs events.
+
+Realtime examples:  chat applications
+
+
+var events = require('events');
+
+var eventEmitter = new events.EventEmitter();
+
+eventEmitter.on('connect', function (name) {
+    console.log(name + "  connected");
+})
+
+eventEmitter.on('message', function (details) {
+    console.log(details.name + " : " + details.msg);
+})
+
+eventEmitter.on('disconnect', function (name) {
+    console.log(name + " disconnected");
+})
+
+eventEmitter.emit('connect', "ravi");
+
+//eventEmitter.emit('disconnect', "ravi");
+eventEmitter.emit('message', { name: "ravi", msg: "How are you doing?" });
+eventEmitter.emit('connect', "krish");
+eventEmitter.emit('message', { name: "krish", msg: "I am doing good" });
+eventEmitter.emit('message', { name: "krish", msg: "how about you, Ravi?" });
+eventEmitter.emit('message', { name: "krish", msg: "Ravi??????" });
+eventEmitter.emit('disconnect', "ravi");
+eventEmitter.emit('disconnect', 'krish');
+
+
+Problem Statement: 
+
+Create a workflow of events for a swiggy delivery application. 
+
+1. customer -> order 
+2. restaurent -> accepts  it 
+3. restaurent -> prepares the food 
+4. swiggy -> assign the delivery partner 
+5. deliver partner -> pick food and deliver 
+6. customer -> recieves the order 
+7. customer -> review
+
+
