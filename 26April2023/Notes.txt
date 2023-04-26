@@ -1,0 +1,103 @@
+Working with FileSystem:
+
+module: fs 
+
+read a file asynchronously:
+
+var fs = require('fs');
+
+fs.readFile("abc.txt", function (err, data) {
+    if (err) {
+        console.log(err);
+    }
+    if (data) {
+        console.log(data.toString());
+    }
+});
+
+console.log("done");
+
+
+read a file synchronusly: 
+
+var fs = require('fs');
+
+
+var response = fs.readFileSync('ac.txt');
+
+if (response instanceof Error) {
+    console.log(response);
+}
+else {
+    console.log(response.toString());
+}
+console.log("done");
+
+Write a file asynchronously:
+
+var fs = require('fs');
+
+fs.writeFile('hello.txt', "Hello world", function (error) {
+    if (error) {
+        console.log(error);
+    }
+    else {
+        console.log("file written");
+    }
+})
+
+
+appending the additional content:
+
+var fs = require('fs');
+
+fs.appendFile('hello.txt', " world", function (error) {
+    if (error) {
+        console.log(error);
+    }
+    else {
+        console.log("file written");
+    }
+})
+
+Global Objects: 
+
+Nodejs provides multiple global objects that can be used in different usecases of the node 
+implementations. 
+
+They can be called directly without any module imports. 
+
+
+require('fs'); // global object
+
+console.log(__filename);
+console.log(__dirname);
+setInterval(function () {
+    var date = new Date();
+    console.log(date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
+}, 2000);
+
+setTimeout(function () {
+    console.log("I am set timeout");
+}, 3000);
+
+
+
+env file reading:
+
+
+require('dotenv').config();
+
+console.log(process.env.password);
+console.log(process.env.username);
+
+Stream: Stream is a flow of data where the data is flown from one end to other end 
+in the  of chunks.
+
+We have read stream and write stream to read and write the data. 
+
+read stream:
+
+
+
+
