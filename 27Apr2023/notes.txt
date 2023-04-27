@@ -1,0 +1,64 @@
+WriteStream: 
+
+var fs = require('fs');
+var writeStream = fs.createWriteStream('abc.txt');
+var str = "Hello! how are you?";
+writeStream.write(str, function (err) {
+    if (err) {
+        console.log(err);
+    }
+});
+
+writeStream.end();
+
+writeStream.on('finish', function () {
+    console.log("data writing finished")
+})
+
+
+Modules:
+
+Node.js provides different types of predefined modules to work with 
+multiple use cases. 
+
+OS: used to know the current OS details. 
+
+
+var os = require('os');
+
+console.log(os.tmpdir());
+console.log(os.totalmem());
+console.log(os.freemem());
+console.log(os.hostname());
+console.log(os.cpus());
+
+Path Module: 
+The path module can be used to work with file paths.
+var path = require('path');
+console.log(path.extname("abc.js"));
+console.log(path.isAbsolute("12PM--NodeJS/27Apr2023/modules/path_demo.js"));
+console.log(path.join("abc", "my", "nx", "xyz.js"));
+console.log(path.dirname("/Users/saikumar/Desktop/NodeJS-12PM/12PM--NodeJS/27Apr2023/modules/package.json"))
+
+
+
+Task: Go through the following modules. 
+
+Crypto Module, Net Module
+
+https://www.w3schools.com/nodejs/ref_modules.asp
+
+
+Debugger: We have a Debugger available in VS Code to debug the code. 
+
+Steps:
+
+1. add a break point and go to debug logo and click. 
+
+2. click on Green traingle. 
+
+
+http module: 
+ 
+ 
+
