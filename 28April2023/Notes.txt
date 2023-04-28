@@ -1,0 +1,14 @@
+Express.js:
+
+It is a server side javascript framework which is used to develop web services running on nodejs platform.
+
+Express.js provides the infrastructure to run the application, however we need to stick to http related 
+rules. 
+
+* It is light weight, javascript oriented, less code more functionality. 
+
+
+Problem Statement: 
+
+Create web services for  simple product management system (without DB)
+
