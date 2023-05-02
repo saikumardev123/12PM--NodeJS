@@ -1,0 +1,8 @@
+Template Engine: 
+
+Template Engines are used to provide UI for node based 
+applications.
+
+There are different types of tenplate engines such as 
+pug (jade),ejs,handlebars... 
+

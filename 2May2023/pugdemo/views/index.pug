@@ -1,0 +1,13 @@
+head
+center
+  h1 Login Here
+  h1 #{message}
+center
+  form(method='post' action='/authenticate')
+    input(type='text' name='username' placeholder='username here')
+    br
+    br
+    input(type='text' name='password' placeholder='password here')
+    br
+    br
+    button Login
