@@ -1,0 +1,15 @@
+Error Handling:
+ 
+ In Express, the error handling is done using try catch and
+ finally mechanism.
+
+ try{
+
+ }
+ catch(error){
+
+ }
+ finally{
+
+     
+ }
