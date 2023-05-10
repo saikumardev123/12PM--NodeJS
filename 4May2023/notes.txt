@@ -4,4 +4,4 @@ We can categorize databases in to 2 types.
 
 1. SQL - Structured Query Language - MySQL, Redshift- Tables -> rows / records
 
-2. NOSQL - Non Structure Query Language - MongoDB,DynamoDB -
+2. NOSQL - Non Structure Query Language - MongoDB,DynamoDB -  Database - collections - documents 
