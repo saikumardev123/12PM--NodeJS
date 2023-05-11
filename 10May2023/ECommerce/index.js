@@ -1,7 +1,9 @@
 var express = require('express');
 var mongoose = require('mongoose');
+var cors = require('cors');
 var app = express();
 app.use(express.json());
+app.use(cors());
 
 var UserModel = require('./model/User');
 
