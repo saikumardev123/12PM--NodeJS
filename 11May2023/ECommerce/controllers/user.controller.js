@@ -8,7 +8,23 @@ exports.addUser = async function (req, res) {
     console.log(response);
     res.send(response);
 }
-
+exports.login = async function (req, res) {
+    console.log("I am in login");
+    console.log(req.body);
+    var emailId = req.body.emailId;
+    var userPassword = req.body.password;
+    var user = await UserModel.find({ emailId: emailId });
+    console.log("user", user);
+    if (user.length != 0) {
+        var password = user[0].password;
+        if (userPassword == password) {
+            res.send({ message: "success", statusCode: 200 })
+        }
+    }
+    else {
+        res.send({ message: "failure", statusCode: 400 });
+    }
+}
 exports.getAllUsers = async function (req, res) {
     var response = await UserModel.find();
     res.send(response);
@@ -25,3 +41,6 @@ exports.deleteUser = async function (req, res) {
     var response = await UserModel.findOneAndDelete({ _id: _id });
     res.send(response);
 }
+
+
+

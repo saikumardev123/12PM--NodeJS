@@ -1,0 +1,175 @@
+Aggregation:
+
+
+query:
+
+ db.products.aggregate([{$group : {_id : "$seller", productsCount : {$sum : 1}}}])
+
+ Using distinct() and count():
+
+
+ distinct:
+
+ db.products.distinct('sellers');
+[ ]
+> db.products.distinct('sellers');
+[ ]
+> db.products.distinct('seller');
+[ "RetailNet", "AkonTech" ]
+> db.products.distinct('name');
+[ "product 2", "product 3", "product 4", "product 5", "product 6" ]
+
+
+count:
+
+ db.products.count();
+
+
+ Sorting documents:
+
+ sort():
+
+ low to high: db.products.find({}).sort({price:1}).pretty();
+
+ high to low:  db.products.find({}).sort({price:-1}).pretty();
+
+Data Modelling:
+
+There are 2 types of modelling:
+
+1. embedded documents :
+
+Any relationships will be embedded in a single object - recommended 
+
+
+  var employee= {
+         eid:101,
+         name:"kiran",
+         address:  {
+               hno:101,
+               city:"hyderabad",
+               state:"Telangana"
+         },
+         projects: [
+             {
+                 name: "xyz", 
+                 client: {
+                          location:"hyd",
+                 }
+             }
+         ]
+  }
+
+
+
+2. reference documents : 
+
+ The _id of one document is referred in the other document.
+
+
+  var employee= {
+         eid:101,
+         name:"kiran",
+         address: ObjectId("10790gdjshvc")
+  }
+var address =
+  {
+      _id:10790gdjshvc
+     hno:101,
+     city:"hyderabad",
+     state: "telangana"
+  }
+
+
+One-To-One Relationship: 
+
+  var employee= {
+         eid:101,
+         name:"kiran",
+         address: ObjectId("10790gdjshvc")
+  }
+var address =
+  {
+      _id:10790gdjshvc
+     hno:101,
+     city:"hyderabad",
+     state: "telangana"
+  }
+
+
+
+One-To-Many Relationship:
+
+  var employee= {
+         eid:101,
+         name:"kiran",
+         address: [address,address2,address3]
+  }
+var address =
+  {
+      _id:10790gnmdjshvc
+     hno:101,
+     city:"hyderabad",
+     state: "telangana"
+  }
+
+  var address2 =
+  {
+      _id:107nb90gdjshvc
+     hno:101,
+     city:"hyderabad",
+     state: "telangana"
+  }
+
+  var address3 =
+  {
+      _id:10790gdjsghhvc
+     hno:101,
+     city:"hyderabad",
+     state: "telangana"
+  }
+
+
+Many-To-Many Relationship:
+
+var employee= {
+         eid:101,
+         name:"kiran",
+         address: [address,address2,address3]
+  }
+
+  var employee= {
+         eid:102,
+         name:"kiran",
+         address: [address,address2,address3]
+  }
+var address =
+  {
+      _id:10790gnmdjshvc
+     hno:101,
+     city:"hyderabad",
+     state: "telangana"
+  }
+
+  var address2 =
+  {
+      _id:107nb90gdjshvc
+     hno:101,
+     city:"hyderabad",
+     state: "telangana"
+  }
+
+  var address3 =
+  {
+      _id:10790gdjsghhvc
+     hno:101,
+     city:"hyderabad",
+     state: "telangana"
+  }
+
+
+
+
+
+
+
