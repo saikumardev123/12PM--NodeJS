@@ -1,0 +1,4 @@
+Name: Ecommerce App 
+
+Scope: APIs for User Managament, Product Mangement, Payment Integration (RazorPay).
+
