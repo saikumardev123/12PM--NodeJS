@@ -27,4 +27,5 @@ var UserSchema = new Schema({
         unique: true
     }
 });
+// some comment
 module.exports = mongoose.model('user', UserSchema);
