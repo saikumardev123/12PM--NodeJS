@@ -1,4 +1,5 @@
 var UserModel = require('../models/user.model');
+var Email = require('../utils/email');
 const bcrypt = require('bcryptjs');
 exports.register = async (req, res) => {
     var user = req.body;
@@ -14,6 +15,9 @@ exports.register = async (req, res) => {
             })
         }
         else {
+
+            Email.sendEmail(user.email);
+
             res.status(201).send({
                 statusCode: 201,
                 message: "Registration success"
@@ -22,5 +26,42 @@ exports.register = async (req, res) => {
     }
     catch (error) {
         console.log(error);
+    }
+}
+
+exports.login = async (req, res) => {
+    var user = req.body;
+    var username = user.username;
+    var password = user.password;
+    var response = await UserModel.findOne({ "username": username });
+    if (response == null) {
+        return res.status(401).send(
+            {
+                statusCode: 401,
+                message: "User Not Found"
+
+            }
+        )
+    }
+    if ("password" in response) {
+        var result = bcrypt.compareSync(password, response.password);
+        if (result) {
+            res.status(200).send(
+                {
+                    statusCode: 200,
+                    message: "Login Success"
+
+                }
+            )
+        }
+        else {
+            res.status(401).send(
+                {
+                    statusCode: 401,
+                    message: "Password incorrect"
+
+                }
+            )
+        }
     }
 }
