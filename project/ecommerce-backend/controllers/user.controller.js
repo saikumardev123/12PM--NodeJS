@@ -65,7 +65,3 @@ exports.login = async (req, res) => {
         }
     }
 }
-
-// rzp_test_cpeDHiUp7p86Zn 
-
-//1raW0wDba0Bo2hQFlaRvbtDu
