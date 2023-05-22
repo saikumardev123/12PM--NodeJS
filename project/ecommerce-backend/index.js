@@ -1,18 +1,20 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const app = express();
+const cors = require('cors');
 const db = require('./utils/db');
 const Razorpay = require('razorpay');
 const UserRouter = require('./routes/user.route');
 const ProductRouter = require('./routes/product.route');
 dotenv.config();
-db.connect();
+//db.connect();
+app.use(cors());
 app.use(express.json());
 app.use('/user', UserRouter);
 app.use('/product', ProductRouter);
 const razorpayInstance = new Razorpay({
-    key_id: "",
-    key_secret: ""
+    key_id: "rzp_test_yNwTLapO6BFmov",
+    key_secret: "Sj1MHQWiQlg4ruiBKXSorX82"
 });
 app.post('/createOrder', (req, res) => {
     // STEP 1:
